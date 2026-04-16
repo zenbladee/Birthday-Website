@@ -34,9 +34,27 @@ document.addEventListener('DOMContentLoaded', function() {
         for(let i = 1; i <= lastDay; i++){
             const dayDiv = document.createElement('div');
             dayDiv.textContent = i;
-            if(i === today.getDate() && month === today.getMonth() && year === today.getFullYear()){
+
+            //Highlight today 
+            if( i=== today.getDate() && month === today.getMonth() && year === today.getFullYear()){
                 dayDiv.classList.add('today');
             }
+
+            //Click Event
+            dayDiv.addEventListener('click', function () {
+                //Remove previous selection
+                document.querySelectorAll('.selected').forEach(el => {
+                    el.classList.remove('selected');
+                });
+
+                //Add selection to clicked
+                dayDiv.classList.add('selected');
+                
+                //Save selected date
+                selectedDate = new Date(year, month, i);
+
+                console.log(selectedDate); //debugger
+            });
             daysContainer.appendChild(dayDiv);
         }
 
@@ -61,4 +79,32 @@ document.addEventListener('DOMContentLoaded', function() {
         renderCalendar(currentDate);
     });
     renderCalendar(currentDate);
+});
+
+
+//Allow each day to be clickable and highlighted
+let selectedDate = null;
+
+const submitBtn = document.getElementById('submit');
+
+submitBtn.addEventListener('click', function () {
+    if(!selectedDate){
+        alert("Select a Date");
+        return;
+    }
+
+    const selectedMonth = selectedDate.getMonth();
+    const selectedDay = selectedDate.getDate();
+
+    //Dad Bday
+    const dadMonth = 3; //April
+    const dadDay = 15; //Day
+
+    if(selectedMonth === dadMonth && selectedDay === dadDay){
+        //Go to dad.html
+        window.location.href = "dad.html";
+    }
+    else {
+        alert("No birthdays here!");
+    }
 });
