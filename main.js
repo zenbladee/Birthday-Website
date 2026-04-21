@@ -100,9 +100,17 @@ submitBtn.addEventListener('click', function () {
     const dadMonth = 3; //April
     const dadDay = 15; //Day
 
+    //Mom bday
+    const momMonth = 3; //April
+    const momDay = 20; //Day
+
     if(selectedMonth === dadMonth && selectedDay === dadDay){
         //Go to dad.html
         window.location.href = "dad.html";
+    }
+    else if(selectedMonth === momMonth && selectedDay === momDay){
+        //Go to mom.html
+        window.location.href = "mom.html";
     }
     else {
         alert("No birthdays here!");
