@@ -105,7 +105,7 @@ submitBtn.addEventListener('click', function () {
     const momDay = 20; //Day
 
     //Sophia bday
-    const sophMonth = 5 //May
+    const sophMonth = 4 //May
     const sophDay = 30 //Day
 
     if(selectedMonth === dadMonth && selectedDay === dadDay){
