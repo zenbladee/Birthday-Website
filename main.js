@@ -111,10 +111,12 @@ submitBtn.addEventListener('click', function () {
     if(selectedMonth === dadMonth && selectedDay === dadDay){
         //Go to dad.html
         //window.location.href = "dad.html";
+        window.location.href = "index.html";
     }
     else if(selectedMonth === momMonth && selectedDay === momDay){
         //Go to mom.html
         //window.location.href = "mom.html";
+        window.location.href = "index.html";
     }
     else if(selectedMonth === sophMonth && selectedDay === sophDay){
         //Go to soph.html
