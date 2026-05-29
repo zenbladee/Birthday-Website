@@ -119,7 +119,7 @@ submitBtn.addEventListener('click', function () {
         window.location.href = "index.html";
     }
     else if(selectedMonth === sophMonth && selectedDay === sophDay){
-        //Go to soph.html
+        //Go to sophia.html
         window.location.href = "sophia.html";
     }
     else {
